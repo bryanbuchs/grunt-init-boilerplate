@@ -1,0 +1,54 @@
+// our own mixins and helper classes
+
+.debug(@color: red, @style: dotted) {
+  outline: 1px @style @color;
+}
+
+.fpo {
+  display: block;
+  .debug(white, solid);
+  background-image: none;
+  background-color: red;
+}
+
+.hide {
+  display: none;
+}
+
+.reset {
+  padding: 0;
+  margin: 0;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+
+// displays a list horizontally by floating LIs
+// used as the base for tabs and other bars
+.list-horizontal(@width: auto) {
+  .reset;
+  .clearfix;
+  list-style: none;
+
+  li {
+    float: left;
+    width: @width;
+  }
+}
+
+// displays a list in a horizontal "bar", but distributes the list items evenly
+.list-horizontal-justified(@width: 100%) {
+  .reset;
+  list-style: none;
+  display: table;
+  border-collapse:collapse;
+  width: @width;
+
+  li {
+    .reset;
+    display: table-cell;
+    width: 1%;
+  }
+}

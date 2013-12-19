@@ -1,0 +1,51 @@
+/*
+ * Media queries breakpoints
+ * --------------------------------------------------
+ * default style rules should be targeted at "desktop" mode.
+ * use media queries to make adjustments for tablets and phones.
+ * this is the opposite of the "mobile first" approach, but if
+ * we make sure that browsers like IE8 don't need to parse @media
+ * blocks to build the page, we can eliminate the respond polyfill.
+ */
+
+@tiny:                320px;
+@phone:               640px;
+@tablet:              960px;
+@desktop:             @tablet + 1;
+@widescreen:          @container + (@margin * 2);
+@phone-min:           0px;
+@phone-max:           @phone;
+@tablet-min:          @phone + 1;
+@tablet-max:          @tablet;
+@desktop-min:         @tablet + 1;
+@widescreen-max:      @widescreen;
+
+/*
+
+  // phones only (0...480)
+  @media screen and (min-width: @phone-min) and (max-width: @phone-max) {
+
+  }
+
+  // tablets only (481...768)
+  @media screen and (min-width: @tablet-min) and (max-width: @tablet-max) {
+
+  }
+
+  // phones and tablets (0...768)
+  @media screen and (min-width: @phone-min) and (max-width: @tablet-max) {
+
+  }
+
+  // desktop only (769...)
+  @media screen and (min-width: @desktop-min) {
+
+  }
+
+  // below widescreen (0...1200)
+  @media screen and (max-width: @widescreen-max) {
+
+  }
+
+
+*/
