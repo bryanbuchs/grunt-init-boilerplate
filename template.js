@@ -12,7 +12,8 @@ exports.notes = '';
 
 // Template-specific notes to be displayed after question prompts.
 exports.after = 'You should now install project dependencies with _npm ' +
-  'install_. After that, you may execute project tasks with _grunt_. For ' +
+  'install && bower install_.  ' +
+  'After that, you may execute project tasks with _grunt_. For ' +
   'more information about installing and configuring Grunt, please see ' +
   'the Getting Started guide:' +
   '\n\n' +
@@ -73,8 +74,6 @@ exports.template = function(grunt, init, done) {
       "grunt-contrib-concat": "~0.3.0",
       "grunt-contrib-jshint": "~0.7.2",
       "grunt-contrib-uglify": "~0.2.7",
-      // "jpegtran-bin": "~0.2.0",
-      // "grunt-contrib-imagemin": "~0.3.0",
       "grunt-recess": "~0.4.0",
       "grunt-glue": "~0.1.1",
       "grunt-contrib-copy": "~0.4.1",
@@ -84,9 +83,6 @@ exports.template = function(grunt, init, done) {
 
     // Files to copy (and process).
     var files = init.filesToCopy(props);
-
-    // Add properly-named license files.
-    // init.addLicenseFiles(files, props.licenses);
 
     // Actually copy (and process) files.
     init.copyAndProcess(files, props);
